@@ -8,7 +8,6 @@ const geocod_api_key = process.env.GEOCODING_API_KEY
 const weatherURL = `http://api.weatherstack.com/current?access_key=${weather_api_key}&query=37.8267,-122.4233&units=f`
 
 request({ url: weatherURL, json: true }, (error, response) => {
-    // console.log(response.body.current)
     console.log(response.body.current.weather_descriptions[0] + '. It is currently ' + response.body.current.temperature + ' degree out. ' + 'It feels like ' + response.body.current.feelslike + ' degreess out.')
 })
 
